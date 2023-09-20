@@ -1,0 +1,5 @@
+0 AMR Robots
+1 Shelf
+2 AMR Robot With Shelf
+3 Landmark
+4 Charging Station
