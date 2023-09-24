@@ -1,4 +1,6 @@
 #Using YoloV8
+import sys
+from PIL import Image
 from ultralytics import YOLO
 import cv2
 import argparse
@@ -22,17 +24,19 @@ def liveCamera(model):
     frameWidth, frameHeight=args.webcam_resolution
 
     #open camera
-    camera=cv2.VideoCapture(0)
-    camera.set(cv2.CAP_PROP_FRAME_HEIGHT,frameHeight)
-    camera.set(cv2.CAP_PROP_FRAME_WIDTH,frameWidth)
-
+    try:
+        camera=cv2.VideoCapture(0)
+        camera.set(cv2.CAP_PROP_FRAME_HEIGHT,frameHeight)
+        camera.set(cv2.CAP_PROP_FRAME_WIDTH,frameWidth)
+    except:
+        sys.exit("Camera Not Connected")
+ 
     #create bounding boxes to add around detected objects
     boxAnnotator= sv.BoxAnnotator(
         thickness=2,
         text_thickness=2,
         text_scale=1
     )
-
     #Anything Below Threshold will not be marked
     threshold=0.5   
 
@@ -62,13 +66,37 @@ def liveCamera(model):
             break
 
 
+def stillImage(model,path):
+   
+    result=model(path, conf=0.5)
+    result=result[0]
+
+    print(len(result.boxes))
+
+    for box in result.boxes:
+        label=result.names[box.cls[0].item()]
+        cords=[round(x) for x in box.xyxy[0].tolist()]
+        confidence=round(box.conf[0].item(),2)
+        print("Object Type: ",label)
+        print("Coordinates: ",cords)
+        print("Confidence: ",confidence)
+        print("-------------------------")
+    
+    Image.fromarray(result.plot( )[:,:,::-1]).show()
+
+    
+
 def main():
     #Load the YOLO model
     modelPath="runs/detect/train/weights/last.pt"
     model=YOLO(modelPath)
+    
+    imagePath1="Data/images/train/20230915_122551.jpg"
+    imagePath2="Data/images/train/20230915_124542.jpg"
+    imagePath3="Data/images/train/20230915_124629.jpg"
 
-    liveCamera(model)
-
+    stillImage(model,imagePath3)
+    #liveCamera(model)
     
 
 if __name__ == "__main__":
