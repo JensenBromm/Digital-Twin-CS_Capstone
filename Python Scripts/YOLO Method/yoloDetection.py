@@ -6,6 +6,7 @@ import cv2
 import argparse
 import supervision as sv
 
+#Get the user input for camera resolution from command line
 def parseArgs()->argparse.Namespace:
     parser=argparse.ArgumentParser(description="YoloV8Cam")
     parser.add_argument(
@@ -18,6 +19,7 @@ def parseArgs()->argparse.Namespace:
     args=parser.parse_args()
     return args
 
+#Object detection using webcam footage
 def liveCamera(model):
     #get camera resolution
     args=parseArgs()
@@ -26,9 +28,15 @@ def liveCamera(model):
     #open camera
     try:
         camera=cv2.VideoCapture(0)
+        #Make sure that the camera is connected and can be read from
+        if(camera.read()[0]==False):
+            raise Exception
+        
+        #Set the resolution of the camera (Passed in by CMD Line or 1280x720)
         camera.set(cv2.CAP_PROP_FRAME_HEIGHT,frameHeight)
         camera.set(cv2.CAP_PROP_FRAME_WIDTH,frameWidth)
     except:
+        #Stop the program since no camera is connected
         sys.exit("Camera Not Connected")
  
     #create bounding boxes to add around detected objects
@@ -65,15 +73,18 @@ def liveCamera(model):
         if(cv2.waitKey(30)==27):
             break
 
-
+#object detection using a jpg image
 def stillImage(model,path):
    
-    result=model(path, conf=0.5)
+    #Predict what objects are in the image
+    result=model(path, conf=0.5) #CONF means that is has to be >50% sure that the object is there
     result=result[0]
 
+    #How Many Objects are detected
     print(len(result.boxes))
 
-    for box in result.boxes:
+    #Go through all objects detected, get name, confidence level, and the coordinates of the object in the image
+    for box in result.boxes: #This loop is not needed in final product
         label=result.names[box.cls[0].item()]
         cords=[round(x) for x in box.xyxy[0].tolist()]
         confidence=round(box.conf[0].item(),2)
@@ -82,18 +93,19 @@ def stillImage(model,path):
         print("Confidence: ",confidence)
         print("-------------------------")
     
+    #Open the image
     Image.fromarray(result.plot( )[:,:,::-1]).show()
 
     
-
+#Call methods and link to YOLO model
 def main():
     #Load the YOLO model
-    modelPath="runs/detect/train/weights/last.pt"
+    modelPath="YOLO Method/runs/detect/train/weights/last.pt"
     model=YOLO(modelPath)
     
-    imagePath1="Data/images/train/20230915_122551.jpg"
-    imagePath2="Data/images/train/20230915_124542.jpg"
-    imagePath3="Data/images/train/20230915_124629.jpg"
+    imagePath1="YOLO Method/Data/images/train/20230915_122551.jpg"
+    imagePath2="YOLO Method/Data/images/train/20230915_124542.jpg"
+    imagePath3="YOLO Method/Data/images/train/20230915_124629.jpg"
 
     stillImage(model,imagePath3)
     #liveCamera(model)
