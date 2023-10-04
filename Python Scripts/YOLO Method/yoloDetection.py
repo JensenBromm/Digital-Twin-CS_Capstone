@@ -73,6 +73,9 @@ def liveCamera(model):
         if(cv2.waitKey(30)==27):
             break
 
+    camera.release()
+    cv2.destroyAllWindows()
+
 #object detection using a jpg image
 def stillImage(model,path):
    
@@ -96,7 +99,63 @@ def stillImage(model,path):
     #Open the image
     Image.fromarray(result.plot( )[:,:,::-1]).show()
 
+
+def video(model,path):
+    if(len(path)==0):
+        sys.exit("Path Can Not be blank")
     
+    #open the video
+    try:
+        camera=cv2.VideoCapture(path)
+        if(camera.isOpened()==False):
+            raise Exception
+       
+    except:
+        #Stop the program since no path was provided is connected
+        sys.exit("Error: Video could not be opened")
+ 
+    #create bounding boxes to add around detected objects
+    boxAnnotator= sv.BoxAnnotator(
+        thickness=2,
+        text_thickness=2,
+        text_scale=1
+    )
+    #Anything Below Threshold will not be marked
+    threshold=0.5   
+
+    while True:
+        #retrive a frame from the image
+        ret, frame=camera.read()
+    
+        if ret==True:
+           
+            #run the frame through the yolov8 model
+            results=model(frame,conf=threshold)[0]
+
+            #draw boxes around detected objects
+            detection=sv.Detections.from_yolov8(results)
+            #get the labels and confidence value from the detection
+            labels=[
+                f"{model.names[class_id]} {confidence:0.2f}"
+                for _,confidence,class_id, _
+                in detection
+            ]
+            #Add the box around detected object
+            frame=boxAnnotator.annotate(scene=frame, detections=detection, labels=labels)
+
+            #display frame to user
+            cv2.imshow("YoloMethod",frame)
+
+            #Escape key will close the window
+            if(cv2.waitKey(30)==27):
+                break
+        else:
+            break
+
+    camera.release()
+    cv2.destroyAllWindows()
+
+
 #Call methods and link to YOLO model
 def main():
     #Load the YOLO model
@@ -107,8 +166,11 @@ def main():
     imagePath2="YOLO Method/Data/images/train/20230915_124542.jpg"
     imagePath3="YOLO Method/Data/images/train/20230915_124629.jpg"
 
-    stillImage(model,imagePath3)
+    videoPath="AMRVideo2.mp4"
+
+    #stillImage(model,imagePath3)
     #liveCamera(model)
+    video(model, videoPath)
     
 
 if __name__ == "__main__":
