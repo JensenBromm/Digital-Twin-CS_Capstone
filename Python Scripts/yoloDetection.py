@@ -159,12 +159,12 @@ def video(model,path):
 #Call methods and link to YOLO model
 def main():
     #Load the YOLO model
-    modelPath="YOLO Method/runs/detect/train/weights/last.pt"
+    modelPath="runs/detect/train/weights/last.pt"
     model=YOLO(modelPath)
     
-    imagePath1="YOLO Method/Data/images/train/20230915_122551.jpg"
-    imagePath2="YOLO Method/Data/images/train/20230915_124542.jpg"
-    imagePath3="YOLO Method/Data/images/train/20230915_124629.jpg"
+    imagePath1="Data/images/train/20230915_122551.jpg"
+    imagePath2="Data/images/train/20230915_124542.jpg"
+    imagePath3="Data/images/train/20230915_124629.jpg"
 
     videoPath="AMRVideo2.mp4"
 
