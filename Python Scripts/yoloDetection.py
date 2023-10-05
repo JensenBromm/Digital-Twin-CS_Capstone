@@ -6,6 +6,13 @@ import cv2
 import argparse
 import supervision as sv
 
+#Define Global variables
+#Load the YOLO model
+modelPath="runs/detect/train/weights/last.pt"
+model=YOLO(modelPath)
+#Anything Below Threshold will not be marked
+threshold=0.5
+
 #Get the user input for camera resolution from command line
 def parseArgs()->argparse.Namespace:
     parser=argparse.ArgumentParser(description="YoloV8Cam")
@@ -20,7 +27,7 @@ def parseArgs()->argparse.Namespace:
     return args
 
 #Object detection using webcam footage
-def liveCamera(model):
+def webcam():
     #get camera resolution
     args=parseArgs()
     frameWidth, frameHeight=args.webcam_resolution
@@ -76,8 +83,62 @@ def liveCamera(model):
     camera.release()
     cv2.destroyAllWindows()
 
+def liveCamera(ip):
+     #get camera resolution
+    args=parseArgs()
+    frameWidth, frameHeight=args.webcam_resolution
+
+    #open camera
+    try:
+        camera=cv2.VideoCapture(ip)
+        #Make sure that the camera is connected and can be read from
+        if(camera.isOpened()==False):
+            raise Exception
+        
+        #Set the resolution of the camera (Passed in by CMD Line or 1280x720)
+        camera.set(cv2.CAP_PROP_FRAME_HEIGHT,frameHeight)
+        camera.set(cv2.CAP_PROP_FRAME_WIDTH,frameWidth)
+    except:
+        #Stop the program since no camera is connected
+        sys.exit("Cannot connect to camera")
+ 
+    #create bounding boxes to add around detected objects
+    boxAnnotator= sv.BoxAnnotator(
+        thickness=2,
+        text_thickness=2,
+        text_scale=1
+    )
+       
+
+    while True:
+        #retrive a frame from the image
+        ret, frame=camera.read()
+    
+        #run the frame through the yolov8 model
+        results=model(frame,conf=threshold)[0]
+
+        #draw boxes around detected objects
+        detection=sv.Detections.from_yolov8(results)
+        #get the labels and confidence value from the detection
+        labels=[
+            f"{model.names[class_id]} {confidence:0.2f}"
+            for _,confidence,class_id, _
+            in detection
+        ]
+        #Add the box around detected object
+        frame=boxAnnotator.annotate(scene=frame, detections=detection, labels=labels)
+
+        #display frame to user
+        cv2.imshow("YoloMethod",frame)
+
+        #Escape key will close the window
+        if(cv2.waitKey(30)==27):
+            break
+
+    camera.release()
+    cv2.destroyAllWindows()
 #object detection using a jpg image
-def stillImage(model,path):
+def stillImage(path):
    
     #Predict what objects are in the image
     result=model(path, conf=0.5) #CONF means that is has to be >50% sure that the object is there
@@ -100,7 +161,7 @@ def stillImage(model,path):
     Image.fromarray(result.plot( )[:,:,::-1]).show()
 
 
-def video(model,path):
+def video(path):
     if(len(path)==0):
         sys.exit("Path Can Not be blank")
     
@@ -158,9 +219,6 @@ def video(model,path):
 
 #Call methods and link to YOLO model
 def main():
-    #Load the YOLO model
-    modelPath="runs/detect/train/weights/last.pt"
-    model=YOLO(modelPath)
     
     imagePath1="Data/images/train/20230915_122551.jpg"
     imagePath2="Data/images/train/20230915_124542.jpg"
@@ -168,9 +226,13 @@ def main():
 
     videoPath="AMRVideo2.mp4"
 
-    #stillImage(model,imagePath3)
-    #liveCamera(model)
-    video(model, videoPath)
+    #Can only connect to security camera while on GSU campus
+    cameraIP="rtsp://141.165.40.33/stream1"
+
+    #stillImage(imagePath3)
+    #webcam()
+    #liveCamera(cameraIP)
+    video(videoPath)
     
 
 if __name__ == "__main__":
