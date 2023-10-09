@@ -1,12 +1,11 @@
-path: A:/Code/Visual Studio Code Projects/Python/Digital-Twin-CS_Capstone/Python Scripts/YOLO Method/Data #This will need to be changed to relative path later
+path: A:/Code/Visual Studio Code Projects/Python/Digital-Twin-CS_Capstone/Python Scripts/Data #This will need to be changed to relative path later
 train: images/train
 val: images/train #Validation data set. Can be changed later if we get new pictures
 
 #Classes
 names:
-  0: Person
-  1: Charging Station
-  2: Landmark
-  3: AMR Robot
-  4: AMR Robot With Shelf
-  5: Shelf
+  0: Charging Station
+  1: Landmark
+  2: AMR Robot
+  3: AMR Robot With Shelf
+  4: Shelf
