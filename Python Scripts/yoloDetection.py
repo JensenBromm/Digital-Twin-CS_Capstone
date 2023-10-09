@@ -224,7 +224,7 @@ def main():
     imagePath2="Data/images/train/20230915_124542.jpg"
     imagePath3="Data/images/train/20230915_124629.jpg"
 
-    videoPath="AMRVideo2.mp4"
+    videoPath="Videos/stream1.mp4"
 
     #Can only connect to security camera while on GSU campus
     cameraIP="rtsp://141.165.40.33/stream1"
