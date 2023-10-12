@@ -1,0 +1,28 @@
+{
+	"version": 1,
+	"changelists": [
+		{
+			"guid": "00000000000000000000000000000000",
+			"description": "Default Uncontrolled Changelist",
+			"files": [
+				"B:/Capstone/Digital-Twin-CS_Capstone/Unreal-CPP Files/RobotProj/Content/SimBlank/FbxScene_RoomMap.uasset",
+				"B:/Capstone/Digital-Twin-CS_Capstone/Unreal-CPP Files/RobotProj/Content/SimBlank/ChargingDock.uasset",
+				"B:/Capstone/Digital-Twin-CS_Capstone/Unreal-CPP Files/RobotProj/Content/SimBlank/Materials/ChargingDock.uasset",
+				"B:/Capstone/Digital-Twin-CS_Capstone/Unreal-CPP Files/RobotProj/Content/SimBlank/Materials/Landmark.uasset",
+				"B:/Capstone/Digital-Twin-CS_Capstone/Unreal-CPP Files/RobotProj/Content/SimBlank/Materials/Robot.uasset",
+				"B:/Capstone/Digital-Twin-CS_Capstone/Unreal-CPP Files/RobotProj/Content/SimBlank/Robot.uasset",
+				"B:/Capstone/Digital-Twin-CS_Capstone/Unreal-CPP Files/RobotProj/Content/SimBlank/Charger.uasset",
+				"B:/Capstone/Digital-Twin-CS_Capstone/Unreal-CPP Files/RobotProj/Content/RobotMap.umap",
+				"B:/Capstone/Digital-Twin-CS_Capstone/Unreal-CPP Files/RobotProj/Content/SimBlank/Materials/Marker.uasset",
+				"B:/Capstone/Digital-Twin-CS_Capstone/Unreal-CPP Files/RobotProj/Content/SimBlank/Marker.uasset",
+				"B:/Capstone/Digital-Twin-CS_Capstone/Unreal-CPP Files/RobotProj/Content/SimBlank/BP_Marker.uasset",
+				"B:/Capstone/Digital-Twin-CS_Capstone/Unreal-CPP Files/RobotProj/Content/SimBlank/Landmark.uasset",
+				"B:/Capstone/Digital-Twin-CS_Capstone/Unreal-CPP Files/RobotProj/Content/SimBlank/Fbx_Default_Material.uasset",
+				"B:/Capstone/Digital-Twin-CS_Capstone/Unreal-CPP Files/RobotProj/Content/SimBlank/RoomMap.uasset",
+				"B:/Capstone/Digital-Twin-CS_Capstone/Unreal-CPP Files/RobotProj/Content/SimBlank/Shape_Cube.uasset",
+				"B:/Capstone/Digital-Twin-CS_Capstone/Unreal-CPP Files/RobotProj/Content/SimBlank/Shape_Cylinder.uasset",
+				"B:/Capstone/Digital-Twin-CS_Capstone/Unreal-CPP Files/RobotProj/Content/SimBlank/Shape_Plane.uasset"
+			]
+		}
+	]
+}
