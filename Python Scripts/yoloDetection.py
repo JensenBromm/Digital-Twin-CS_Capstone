@@ -1,17 +1,24 @@
 #Using YoloV8
 import sys
-from PIL import Image
 from ultralytics import YOLO
 import cv2
 import argparse
-import supervision as sv
+import supervision as sv  #MAKE SURE THIS IS VERSION 0.3.0  (pip install supervision==0.3.0)
 
 #Define Global variables
 #Load the YOLO model
 modelPath="runs/detect/train/weights/last.pt"
 model=YOLO(modelPath)
+
+#create bounding boxes to add around detected objects
+boxAnnotator= sv.BoxAnnotator(
+    thickness=2,
+    text_thickness=1,
+    text_scale=0.25
+)
 #Anything Below Threshold will not be marked
-threshold=0.5
+threshold=0.6
+
 
 #Get the user input for camera resolution from command line
 def parseArgs()->argparse.Namespace:
@@ -45,15 +52,6 @@ def webcam():
     except:
         #Stop the program since no camera is connected
         sys.exit("Camera Not Connected")
- 
-    #create bounding boxes to add around detected objects
-    boxAnnotator= sv.BoxAnnotator(
-        thickness=2,
-        text_thickness=2,
-        text_scale=1
-    )
-    #Anything Below Threshold will not be marked
-    threshold=0.5   
 
     while True:
         #retrive a frame from the image
@@ -83,6 +81,7 @@ def webcam():
     camera.release()
     cv2.destroyAllWindows()
 
+#Connect to Camera over RTSP Stream
 def liveCamera(ip):
      #get camera resolution
     args=parseArgs()
@@ -137,30 +136,22 @@ def liveCamera(ip):
 
     camera.release()
     cv2.destroyAllWindows()
+
 #object detection using a jpg image
 def stillImage(path):
-   
+    frame=cv2.imread(path)
+
     #Predict what objects are in the image
-    result=model(path, conf=0.5) #CONF means that is has to be >50% sure that the object is there
-    result=result[0]
+    results=model(frame, conf=threshold)[0] #CONF means that is has to be >50% sure that the object is there
+    detections = sv.Detections.from_yolov8(results)
 
-    #How Many Objects are detected
-    print(len(result.boxes))
+    labels = [f"{model.names[class_id]} {confidence:0.2f}" for _, confidence, class_id, _ in detections]
+    frame = boxAnnotator.annotate(scene=frame, detections=detections, labels=labels)
 
-    #Go through all objects detected, get name, confidence level, and the coordinates of the object in the image
-    for box in result.boxes: #This loop is not needed in final product
-        label=result.names[box.cls[0].item()]
-        cords=[round(x) for x in box.xyxy[0].tolist()]
-        confidence=round(box.conf[0].item(),2)
-        print("Object Type: ",label)
-        print("Coordinates: ",cords)
-        print("Confidence: ",confidence)
-        print("-------------------------")
-    
     #Open the image
-    Image.fromarray(result.plot( )[:,:,::-1]).show()
+    sv.show_frame_in_notebook(frame, (16, 16))
 
-
+#Object Detection via Pre-Recorded Video
 def video(path):
     if(len(path)==0):
         sys.exit("Path Can Not be blank")
@@ -174,15 +165,7 @@ def video(path):
     except:
         #Stop the program since no path was provided is connected
         sys.exit("Error: Video could not be opened")
- 
-    #create bounding boxes to add around detected objects
-    boxAnnotator= sv.BoxAnnotator(
-        thickness=2,
-        text_thickness=2,
-        text_scale=1
-    )
-    #Anything Below Threshold will not be marked
-    threshold=0.5   
+
 
     while True:
         #retrive a frame from the image
@@ -207,6 +190,9 @@ def video(path):
             #display frame to user
             cv2.imshow("YoloMethod",frame)
 
+            for box in detection:
+                print()
+
             #Escape key will close the window
             if(cv2.waitKey(30)==27):
                 break
@@ -216,23 +202,25 @@ def video(path):
     camera.release()
     cv2.destroyAllWindows()
 
-
 #Call methods and link to YOLO model
 def main():
     
-    imagePath1="Data/images/train/20230915_122551.jpg"
-    imagePath2="Data/images/train/20230915_124542.jpg"
-    imagePath3="Data/images/train/20230915_124629.jpg"
+    imagePath1="Data/images/train/20230915_122551.jpg" #Upclose Robot
+    imagePath2="Data/images/train/Stream1 - frame at 0m1s.jpg" #Starting Lineup Stream1
+    imagePath3="Data/images/train/Stream1 - frame at 8m0s.jpg" #Robots with Shelves
+    testPath="output_image.jpg"
 
     videoPath="Videos/stream1.mp4"
 
     #Can only connect to security camera while on GSU campus
     cameraIP="rtsp://141.165.40.33/stream1"
 
-    #stillImage(imagePath3)
+
+
+    stillImage(imagePath3)
     #webcam()
     #liveCamera(cameraIP)
-    video(videoPath)
+    #video(videoPath)
     
 
 if __name__ == "__main__":

@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 
 # Load the image
-image = cv2.imread('D:/CapstoneImage/PythonApplication1/Lab.jpg')
+image = cv2.imread('Data/images/train/Stream1 - frame at 0m1s.jpg')
 
 if image is None:
     print("Error: Unable to load the image.")
