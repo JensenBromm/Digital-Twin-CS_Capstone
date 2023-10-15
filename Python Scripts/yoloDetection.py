@@ -1,5 +1,6 @@
 #Using YoloV8
 import sys
+import math
 from ultralytics import YOLO
 import cv2
 import argparse
@@ -18,6 +19,17 @@ boxAnnotator= sv.BoxAnnotator(
 )
 #Anything Below Threshold will not be marked
 threshold=0.6
+
+
+#Calculate Focul Point of the Camera
+cameraHeight=0 #How far up the wall is the camera
+floorDistance=0 #Distance between wall(underneath the security camera) and AMR Robot
+pixelWidth=0 #width of AMR Robots in Pixels
+realWidth=0 #Measured Width of AMR Robot
+
+distance=math.sqrt(math.pow(cameraHeight,2)+math.pow(floorDistance,2)) #Distance between camera and object  (hypotenuse of floorDistance and camera Height Triangle)
+
+foculPoint=(distance*pixelWidth)/realWidth #Calculate the apparent focul length of the security cameras
 
 
 #Get the user input for camera resolution from command line
@@ -148,6 +160,29 @@ def stillImage(path):
     labels = [f"{model.names[class_id]} {confidence:0.2f}" for _, confidence, class_id, _ in detections]
     frame = boxAnnotator.annotate(scene=frame, detections=detections, labels=labels)
 
+    cords=detections.xyxy
+    #print(cords)
+
+    midPoints=[]
+    widths=[]
+
+    for i in range(len(cords)):
+        #Seperate the coordinates
+        x1=cords[i][0]
+        y1=cords[i][1]
+        x2=cords[i][2]
+        y2=cords[i][3]
+        
+        width=(x2-x1)
+        widths.append(width)
+
+        midX=((x1+x2)/2)
+        midY=((y1+y2)/2)
+        midPoints.append([midX,midY])
+
+    print(widths)
+    print("---------------------")
+    print(midPoints)
     #Open the image
     sv.show_frame_in_notebook(frame, (16, 16))
 
@@ -217,7 +252,7 @@ def main():
 
 
 
-    stillImage(imagePath3)
+    stillImage(imagePath2)
     #webcam()
     #liveCamera(cameraIP)
     #video(videoPath)
