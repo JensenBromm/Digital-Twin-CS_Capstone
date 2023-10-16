@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "RobotProj",
+			"Path": "..\\Source\\RobotProj.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "RobotProjEditor",
+			"Path": "..\\Source\\RobotProjEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}

@@ -1,0 +1,8 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.MongoDB.cpp.obj": [
+			"MongoDB.cpp.obj"
+		]
+	}
+}

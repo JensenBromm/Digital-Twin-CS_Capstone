@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\RobotProj.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{F31BBDD1-B3E8-3BCC-9652-680E16935819}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\RobotProj.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\RobotProjEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\.vsconfig" />
+    <Filter Include="Config">
+      <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Plugins">
+      <UniqueIdentifier>{BB38096A-B391-30DC-A0D4-4F3EA6B44507}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Plugins\MongoDB">
+      <UniqueIdentifier>{5983C3F2-CBEC-3AD8-A317-DD8052CDE3AE}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Plugins\MongoDB\Source">
+      <UniqueIdentifier>{6B6996DB-A2F5-3531-B4EC-30DD9E65421A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Plugins\MongoDB\Source\MongoDB">
+      <UniqueIdentifier>{897BE63B-9542-3B2D-93A2-6ED390A3E6FB}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDB\MongoDB.Build.cs">
+      <Filter>Plugins\MongoDB\Source\MongoDB</Filter>
+    </None>
+    <Filter Include="Plugins\MongoDB\Source\MongoDB\Private">
+      <UniqueIdentifier>{EA31308D-18BA-31C8-A42D-6F40AB656EC2}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Plugins\MongoDB\Source\MongoDB\Private\MongoDB.cpp">
+      <Filter>Plugins\MongoDB\Source\MongoDB\Private</Filter>
+    </ClCompile>
+    <Filter Include="Plugins\MongoDB\Source\MongoDB\Public">
+      <UniqueIdentifier>{BCD740EC-C890-3C0F-A29D-776C65289C4F}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Plugins\MongoDB\Source\MongoDB\Public\MongoDB.h">
+      <Filter>Plugins\MongoDB\Source\MongoDB\Public</Filter>
+    </ClInclude>
+    <None Include="..\..\Plugins\MongoDB\MongoDB.uplugin">
+      <Filter>Plugins\MongoDB</Filter>
+    </None>
+    <Filter Include="Plugins\MongoDB\Resources">
+      <UniqueIdentifier>{69C5431A-6F25-3738-8DCF-C79EADCBC376}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Plugins\MongoDB\Resources\Icon128.png">
+      <Filter>Plugins\MongoDB\Resources</Filter>
+    </None>
+    <Filter Include="Source\RobotProj">
+      <UniqueIdentifier>{3C124B54-61CC-32D1-BE46-64AA3DDB6392}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\RobotProj\RobotMover.cpp">
+      <Filter>Source\RobotProj</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\RobotProj\RobotMover.h">
+      <Filter>Source\RobotProj</Filter>
+    </ClInclude>
+    <None Include="..\..\Source\RobotProj\RobotProj.Build.cs">
+      <Filter>Source\RobotProj</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\RobotProj\RobotProj.cpp">
+      <Filter>Source\RobotProj</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\RobotProj\RobotProj.h">
+      <Filter>Source\RobotProj</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
