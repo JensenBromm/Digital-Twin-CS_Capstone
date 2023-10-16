@@ -1,0 +1,15 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "b:\\capstone\\digital-twin-cs_capstone\\unreal-cpp files\\robotproj\\intermediate\\build\\win64\\unrealeditor\\inc\\robotproj\\uht\\bp_robot.gen.cpp",
+        "ProvidedModule": "",
+        "PCH": "b:\\capstone\\digital-twin-cs_capstone\\unreal-cpp files\\robotproj\\intermediate\\build\\win64\\x64\\robotprojeditor\\development\\engine\\sharedpch.engine.cpp20.inclorderunreal5_0.h.pch",
+        "Includes": [
+            "b:\\capstone\\digital-twin-cs_capstone\\unreal-cpp files\\robotproj\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\robotproj\\definitions.robotproj.h",
+            "b:\\capstone\\digital-twin-cs_capstone\\unreal-cpp files\\robotproj\\source\\robotproj\\bp_robot.h",
+            "b:\\capstone\\digital-twin-cs_capstone\\unreal-cpp files\\robotproj\\intermediate\\build\\win64\\unrealeditor\\inc\\robotproj\\uht\\bp_robot.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}
