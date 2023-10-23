@@ -34,6 +34,22 @@
 			"Type": "RequiredResource"
 		},
 		{
+			"Path": "$(ProjectDir)/Binaries/Win64/bson-1.0.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(ProjectDir)/Binaries/Win64/bsoncxx.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(ProjectDir)/Binaries/Win64/mongoc-1.0.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(ProjectDir)/Binaries/Win64/mongocxx.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
 			"Path": "$(ProjectDir)/Plugins/MongoDB/Binaries/Win64/UnrealEditor-MongoDB.dll",
 			"Type": "DynamicLibrary"
 		},
@@ -3567,6 +3583,22 @@
 		}
 	],
 	"RuntimeDependencies": [
+		{
+			"Path": "$(ProjectDir)/Binaries/Win64/bson-1.0.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(ProjectDir)/Binaries/Win64/bsoncxx.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(ProjectDir)/Binaries/Win64/mongoc-1.0.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(ProjectDir)/Binaries/Win64/mongocxx.dll",
+			"Type": "NonUFS"
+		},
 		{
 			"Path": "$(ProjectDir)/Plugins/MongoDB/MongoDB.uplugin",
 			"Type": "UFS"

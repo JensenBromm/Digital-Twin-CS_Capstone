@@ -36,6 +36,855 @@
     <Filter Include="Plugins\MongoDB\Source">
       <UniqueIdentifier>{6B6996DB-A2F5-3531-B4EC-30DD9E65421A}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Plugins\MongoDB\Source\MongoDBSDK">
+      <UniqueIdentifier>{D72D9258-0A63-3782-BB03-DDFC5DF52B67}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\MongoDBSDK.Build.cs">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK</Filter>
+    </None>
+    <Filter Include="Plugins\MongoDB\Source\MongoDBSDK\Binaries">
+      <UniqueIdentifier>{65CD2BEA-ECAC-3A66-91EC-DEBB02061E1C}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Binaries\bson-1.0.dll">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Binaries</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Binaries\bson-1.0.lib">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Binaries</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Binaries\bsoncxx.dll">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Binaries</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Binaries\bsoncxx.lib">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Binaries</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Binaries\mongoc-1.0.dll">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Binaries</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Binaries\mongoc-1.0.lib">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Binaries</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Binaries\mongocxx.dll">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Binaries</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Binaries\mongocxx.lib">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Binaries</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Binaries\zlib.dll">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Binaries</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Binaries\zlib.lib">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Binaries</Filter>
+    </None>
+    <Filter Include="Plugins\MongoDB\Source\MongoDBSDK\Include">
+      <UniqueIdentifier>{82160A43-86A6-3B16-B3B8-559F422127A8}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\bson.h">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc.h">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\zconf.h">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\zlib.h">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include</Filter>
+    </ClInclude>
+    <Filter Include="Plugins\MongoDB\Source\MongoDBSDK\Include\bson">
+      <UniqueIdentifier>{F66E1B80-B81D-375D-AEC6-15DFAA29E032}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\bson\bcon.h">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\bson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\bson\bson-atomic.h">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\bson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\bson\bson-clock.h">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\bson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\bson\bson-cmp.h">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\bson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\bson\bson-compat.h">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\bson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\bson\bson-config.h">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\bson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\bson\bson-context.h">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\bson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\bson\bson-decimal128.h">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\bson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\bson\bson-dsl.h">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\bson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\bson\bson-endian.h">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\bson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\bson\bson-error.h">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\bson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\bson\bson-iter.h">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\bson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\bson\bson-json.h">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\bson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\bson\bson-keys.h">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\bson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\bson\bson-macros.h">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\bson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\bson\bson-md5.h">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\bson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\bson\bson-memory.h">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\bson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\bson\bson-oid.h">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\bson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\bson\bson-prelude.h">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\bson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\bson\bson-reader.h">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\bson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\bson\bson-string.h">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\bson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\bson\bson-types.h">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\bson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\bson\bson-utf8.h">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\bson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\bson\bson-value.h">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\bson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\bson\bson-version-functions.h">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\bson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\bson\bson-version.h">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\bson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\bson\bson-writer.h">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\bson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\bson\bson.h">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\bson</Filter>
+    </ClInclude>
+    <Filter Include="Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx">
+      <UniqueIdentifier>{4478F825-7E35-31F9-8727-6BD94A06D0AD}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\decimal128.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\json.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\oid.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\types.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\validate.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\view_or_value.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx</Filter>
+    </None>
+    <Filter Include="Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\array">
+      <UniqueIdentifier>{5D856B22-38FC-3257-BAFF-881424539BFA}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\array\element.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\array</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\array\value.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\array</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\array\view.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\array</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\array\view_or_value.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\array</Filter>
+    </None>
+    <Filter Include="Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\builder">
+      <UniqueIdentifier>{56FA6368-E5CA-307C-B70F-1FB3BD87228C}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\builder\concatenate.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\builder</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\builder\core.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\builder</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\builder\list.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\builder</Filter>
+    </None>
+    <Filter Include="Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\builder\basic">
+      <UniqueIdentifier>{5EF53BF1-4635-3C6F-A0F0-43B61158E864}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\builder\basic\array.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\builder\basic</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\builder\basic\document.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\builder\basic</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\builder\basic\helpers.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\builder\basic</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\builder\basic\impl.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\builder\basic</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\builder\basic\kvp.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\builder\basic</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\builder\basic\sub_array.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\builder\basic</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\builder\basic\sub_document.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\builder\basic</Filter>
+    </None>
+    <Filter Include="Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\builder\stream">
+      <UniqueIdentifier>{88C30E48-AA30-3F91-991F-3AD0BC74D663}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\builder\stream\array.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\builder\stream</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\builder\stream\array_context.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\builder\stream</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\builder\stream\closed_context.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\builder\stream</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\builder\stream\document.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\builder\stream</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\builder\stream\helpers.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\builder\stream</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\builder\stream\key_context.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\builder\stream</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\builder\stream\single_context.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\builder\stream</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\builder\stream\value_context.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\builder\stream</Filter>
+    </None>
+    <Filter Include="Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\config">
+      <UniqueIdentifier>{C2A16C21-AB03-336A-ACE8-DDF0858D0F22}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\config\compiler.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\config</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\config\config.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\config</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\config\export.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\config</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\config\postlude.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\config</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\config\prelude.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\config</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\config\version.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\config</Filter>
+    </None>
+    <Filter Include="Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\document">
+      <UniqueIdentifier>{3F5D854F-8466-30CF-8C86-ABC237E6FBBF}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\document\element.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\document</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\document\value.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\document</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\document\view.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\document</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\document\view_or_value.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\document</Filter>
+    </None>
+    <Filter Include="Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\enums">
+      <UniqueIdentifier>{F131EF22-ADA9-32B3-BDFE-DBAEF7FCEA75}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\enums\binary_sub_type.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\enums</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\enums\type.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\enums</Filter>
+    </None>
+    <Filter Include="Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\exception">
+      <UniqueIdentifier>{505519ED-57FC-3057-A177-D880CE55C3EB}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\exception\error_code.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\exception</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\exception\exception.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\exception</Filter>
+    </None>
+    <Filter Include="Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\stdx">
+      <UniqueIdentifier>{23AEDE27-39EA-3DD6-9B99-FA754BE247FF}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\stdx\make_unique.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\stdx</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\stdx\optional.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\stdx</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\stdx\string_view.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\stdx</Filter>
+    </None>
+    <Filter Include="Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\string">
+      <UniqueIdentifier>{1FF563FE-064C-3131-8587-5851C0E026BC}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\string\to_string.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\string</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\string\view_or_value.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\string</Filter>
+    </None>
+    <Filter Include="Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\types">
+      <UniqueIdentifier>{032FA40D-52B8-3306-89CB-0B76E6D72F09}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\types\value.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\types</Filter>
+    </None>
+    <Filter Include="Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\types\bson_value">
+      <UniqueIdentifier>{A5B4E718-9B11-372B-973A-D18F9EC8F1B3}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\types\bson_value\make_value.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\types\bson_value</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\types\bson_value\value.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\types\bson_value</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\types\bson_value\view.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\types\bson_value</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\types\bson_value\view_or_value.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\types\bson_value</Filter>
+    </None>
+    <Filter Include="Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\util">
+      <UniqueIdentifier>{1043B08B-969C-3366-9F06-20BCC489E1D8}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\util\functor.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\bsoncxx\util</Filter>
+    </None>
+    <Filter Include="Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc">
+      <UniqueIdentifier>{1F3873B7-C9E1-3AFC-81EA-25EBCC78A43F}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc\mongoc-apm.h">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc\mongoc-bulk-operation.h">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc\mongoc-change-stream.h">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc\mongoc-client-pool.h">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc\mongoc-client-session.h">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc\mongoc-client-side-encryption.h">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc\mongoc-client.h">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc\mongoc-collection.h">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc\mongoc-config.h">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc\mongoc-cursor.h">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc\mongoc-database.h">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc\mongoc-error.h">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc\mongoc-find-and-modify.h">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc\mongoc-flags.h">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc\mongoc-gridfs-bucket.h">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc\mongoc-gridfs-file-list.h">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc\mongoc-gridfs-file-page.h">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc\mongoc-gridfs-file.h">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc\mongoc-gridfs.h">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc\mongoc-handshake.h">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc\mongoc-host-list.h">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc\mongoc-index.h">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc\mongoc-init.h">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc\mongoc-iovec.h">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc\mongoc-log.h">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc\mongoc-macros.h">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc\mongoc-matcher.h">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc\mongoc-opcode.h">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc\mongoc-optional.h">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc\mongoc-prelude.h">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc\mongoc-rand.h">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc\mongoc-read-concern.h">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc\mongoc-read-prefs.h">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc\mongoc-server-api.h">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc\mongoc-server-description.h">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc\mongoc-socket.h">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc\mongoc-ssl.h">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc\mongoc-stream-buffered.h">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc\mongoc-stream-file.h">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc\mongoc-stream-gridfs.h">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc\mongoc-stream-socket.h">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc\mongoc-stream-tls-libressl.h">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc\mongoc-stream-tls-openssl.h">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc\mongoc-stream-tls.h">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc\mongoc-stream.h">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc\mongoc-topology-description.h">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc\mongoc-uri.h">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc\mongoc-version-functions.h">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc\mongoc-version.h">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc\mongoc-write-concern.h">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc\mongoc.h">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongoc</Filter>
+    </ClInclude>
+    <Filter Include="Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx">
+      <UniqueIdentifier>{C6796E35-9970-363F-9BC1-C58886BA9C6C}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\bulk_write.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\change_stream.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\client.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\client_encryption.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\client_session.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\collection.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\cursor.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\database.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\hint.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\index_model.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\index_view.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\instance.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\logger.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\pipeline.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\pool.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\read_concern.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\read_preference.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\stdx.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\uri.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\validation_criteria.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\write_concern.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\write_type.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx</Filter>
+    </None>
+    <Filter Include="Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\config">
+      <UniqueIdentifier>{63751E51-C3DB-3CE7-A912-49DB963A5C38}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\config\compiler.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\config</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\config\config.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\config</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\config\export.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\config</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\config\postlude.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\config</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\config\prelude.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\config</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\config\version.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\config</Filter>
+    </None>
+    <Filter Include="Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\events">
+      <UniqueIdentifier>{C3281359-6EC5-38C4-8DF3-4887F8FC1968}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\events\command_failed_event.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\events</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\events\command_started_event.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\events</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\events\command_succeeded_event.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\events</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\events\heartbeat_failed_event.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\events</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\events\heartbeat_started_event.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\events</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\events\heartbeat_succeeded_event.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\events</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\events\server_changed_event.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\events</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\events\server_closed_event.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\events</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\events\server_description.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\events</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\events\server_opening_event.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\events</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\events\topology_changed_event.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\events</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\events\topology_closed_event.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\events</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\events\topology_description.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\events</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\events\topology_opening_event.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\events</Filter>
+    </None>
+    <Filter Include="Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\exception">
+      <UniqueIdentifier>{F4AB75B3-9DC7-3735-9B82-BFB16E93135D}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\exception\authentication_exception.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\exception</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\exception\bulk_write_exception.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\exception</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\exception\error_code.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\exception</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\exception\exception.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\exception</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\exception\gridfs_exception.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\exception</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\exception\logic_error.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\exception</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\exception\operation_exception.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\exception</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\exception\query_exception.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\exception</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\exception\server_error_code.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\exception</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\exception\write_exception.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\exception</Filter>
+    </None>
+    <Filter Include="Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\gridfs">
+      <UniqueIdentifier>{7ECB5160-E558-3587-9E71-74FEB8977E25}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\gridfs\bucket.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\gridfs</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\gridfs\downloader.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\gridfs</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\gridfs\uploader.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\gridfs</Filter>
+    </None>
+    <Filter Include="Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\model">
+      <UniqueIdentifier>{6EB5A36E-28DB-3224-B8CB-3A29B31C4532}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\model\delete_many.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\model</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\model\delete_one.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\model</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\model\insert_one.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\model</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\model\replace_one.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\model</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\model\update_many.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\model</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\model\update_one.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\model</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\model\write.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\model</Filter>
+    </None>
+    <Filter Include="Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\options">
+      <UniqueIdentifier>{D138005E-F7D4-31E3-AB80-CE378BB1DAB0}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\options\aggregate.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\options</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\options\apm.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\options</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\options\auto_encryption.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\options</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\options\bulk_write.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\options</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\options\change_stream.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\options</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\options\client.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\options</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\options\client_encryption.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\options</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\options\client_session.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\options</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\options\count.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\options</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\options\create_collection.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\options</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\options\data_key.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\options</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\options\delete.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\options</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\options\distinct.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\options</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\options\encrypt.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\options</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\options\estimated_document_count.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\options</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\options\find.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\options</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\options\find_one_and_delete.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\options</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\options\find_one_and_replace.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\options</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\options\find_one_and_update.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\options</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\options\find_one_common_options.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\options</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\options\index.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\options</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\options\index_view.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\options</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\options\insert.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\options</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\options\pool.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\options</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\options\range.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\options</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\options\replace.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\options</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\options\rewrap_many_datakey.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\options</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\options\server_api.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\options</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\options\ssl.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\options</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\options\tls.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\options</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\options\transaction.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\options</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\options\update.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\options</Filter>
+    </None>
+    <Filter Include="Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\options\gridfs">
+      <UniqueIdentifier>{B69876D5-C5FD-3D97-9302-BE08E85BBA9F}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\options\gridfs\bucket.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\options\gridfs</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\options\gridfs\upload.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\options\gridfs</Filter>
+    </None>
+    <Filter Include="Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\result">
+      <UniqueIdentifier>{5BAFD4A1-9C68-374D-8344-6C6C168A92FA}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\result\bulk_write.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\result</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\result\delete.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\result</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\result\insert_many.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\result</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\result\insert_one.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\result</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\result\replace_one.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\result</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\result\rewrap_many_datakey.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\result</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\result\update.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\result</Filter>
+    </None>
+    <Filter Include="Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\result\gridfs">
+      <UniqueIdentifier>{E75422CE-8F8B-3DED-B216-36859E7A2EB1}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\result\gridfs\upload.hpp">
+      <Filter>Plugins\MongoDB\Source\MongoDBSDK\Include\mongocxx\result\gridfs</Filter>
+    </None>
+    <None Include="..\..\Plugins\MongoDB\MongoDB.uplugin">
+      <Filter>Plugins\MongoDB</Filter>
+    </None>
+    <Filter Include="Plugins\MongoDB\Resources">
+      <UniqueIdentifier>{69C5431A-6F25-3738-8DCF-C79EADCBC376}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Plugins\MongoDB\Resources\Icon128.png">
+      <Filter>Plugins\MongoDB\Resources</Filter>
+    </None>
     <Filter Include="Plugins\MongoDB\Source\MongoDB">
       <UniqueIdentifier>{897BE63B-9542-3B2D-93A2-6ED390A3E6FB}</UniqueIdentifier>
     </Filter>
@@ -54,15 +903,6 @@
     <ClInclude Include="..\..\Plugins\MongoDB\Source\MongoDB\Public\MongoDB.h">
       <Filter>Plugins\MongoDB\Source\MongoDB\Public</Filter>
     </ClInclude>
-    <None Include="..\..\Plugins\MongoDB\MongoDB.uplugin">
-      <Filter>Plugins\MongoDB</Filter>
-    </None>
-    <Filter Include="Plugins\MongoDB\Resources">
-      <UniqueIdentifier>{69C5431A-6F25-3738-8DCF-C79EADCBC376}</UniqueIdentifier>
-    </Filter>
-    <None Include="..\..\Plugins\MongoDB\Resources\Icon128.png">
-      <Filter>Plugins\MongoDB\Resources</Filter>
-    </None>
     <Filter Include="Source\RobotProj">
       <UniqueIdentifier>{3C124B54-61CC-32D1-BE46-64AA3DDB6392}</UniqueIdentifier>
     </Filter>
@@ -80,6 +920,24 @@
     </ClCompile>
     <ClInclude Include="..\..\Source\RobotProj\RobotProj.h">
       <Filter>Source\RobotProj</Filter>
+    </ClInclude>
+    <Filter Include="Source\RobotProj\Private">
+      <UniqueIdentifier>{9E26ED54-D41E-347D-BD13-3BA38AD74B54}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\RobotProj\Private\DatabaseConnection.cpp">
+      <Filter>Source\RobotProj\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\RobotProj\Private\MongoInstance.cpp">
+      <Filter>Source\RobotProj\Private</Filter>
+    </ClCompile>
+    <Filter Include="Source\RobotProj\Public">
+      <UniqueIdentifier>{2E015443-BA2C-3A52-A8F5-D8AD76ABF2B5}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\RobotProj\Public\DatabaseConnection.h">
+      <Filter>Source\RobotProj\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\RobotProj\Public\MongoInstance.h">
+      <Filter>Source\RobotProj\Public</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -8,8 +8,10 @@ public class MongoDBSDK : ModuleRules
 {
 	private List<string> LibraryNames = new List<string>()
 	{
-		"mongocxx",
-		"bsoncxx"
+		"bson-1.0",
+		"bsoncxx",
+		"mongoc-1.0",
+		"mongocxx"
 	};
 	
 	public MongoDBSDK(ReadOnlyTargetRules Target) : base(Target)
