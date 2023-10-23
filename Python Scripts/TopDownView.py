@@ -1,46 +1,61 @@
 import cv2
 import numpy as np
 
-# Load the image
-image = cv2.imread('Data/images/train/Stream1 - frame at 0m1s.jpg')
+# Load the video
+cap = cv2.VideoCapture('D:/CapstoneImage/PythonApplication1/videoLab.mp4')
 
-if image is None:
-    print("Error: Unable to load the image.")
-else:
-    # Define the coordinates of the four points
-    points = []
+if not cap.isOpened():
+    print("Error: Unable to load the video.")
+    exit(1)
 
-    def on_mouse(event, x, y, flags, param):
-        if event == cv2.EVENT_LBUTTONDOWN:
-            if len(points) < 4:
-                points.append((x, y))
-                cv2.circle(image, (x, y), 5, (0, 0, 255), -1)
-                cv2.imshow('Image', image)
+# Define the desired width and height of the transformed video
+new_width = 900
+new_height = 1000
 
-    cv2.imshow('Image', image)
-    cv2.setMouseCallback('Image', on_mouse)
+# Define the coordinates of the four points
+points = []
 
-    while len(points) < 4:
-        cv2.waitKey(1)
+def on_mouse(event, x, y, flags, param):
+    if event == cv2.EVENT_LBUTTONDOWN:
+        if len(points) < 4:
+            points.append((x, y))
+            cv2.circle(frame_with_dots, (x, y), 5, (0, 0, 255), -1)
+            cv2.imshow('Video', frame_with_dots)
 
-    cv2.destroyAllWindows()
+cv2.namedWindow('Video')
+cv2.setMouseCallback('Video', on_mouse)
 
-    # Define the desired width and height of the transformed image
-    new_width = 700
-    new_height = 1000
+while len(points) < 4:
+    ret, frame = cap.read()
+    if not ret:
+        break
+    frame_with_dots = frame.copy()  # Create a copy of the frame to draw dots on
+    cv2.imshow('Video', frame_with_dots)
+    key = cv2.waitKey(0)  # Wait indefinitely until a key is pressed
+    if key == 27:  # Press Esc to exit
+        break
 
-    new_points = np.array([[0, 0], [new_width, 0], [new_width, new_height], [0, new_height]], dtype=np.float32)
+new_points = np.array([[0, 0], [new_width, 0], [new_width, new_height], [0, new_height]], dtype=np.float32)
+
+# Define the codec and create a VideoWriter object
+fourcc = cv2.VideoWriter_fourcc(*'XVID')  # You can change the codec as needed
+out = cv2.VideoWriter('output_video.mp4', fourcc, 30.0, (new_width, new_height))  # Adjust frame rate as needed
+
+while True:
+    ret, frame = cap.read()
+    if not ret:
+        break
 
     matrix = cv2.getPerspectiveTransform(np.array(points, dtype=np.float32), new_points)
+    result_perspective = cv2.warpPerspective(frame, matrix, (new_width, new_height))
 
-    # Perform a perspective transformation
-    result_perspective = cv2.warpPerspective(image, matrix, (new_width, new_height))
-
-    # Display the perspective-transformed image
     cv2.imshow('Top-Down View (Perspective)', result_perspective)
+    out.write(result_perspective)  # Write the frame to the output video
 
-    # Save the final image
-    cv2.imwrite('output_image.jpg', result_perspective)
+    key = cv2.waitKey(1)
+    if key == 27:  # Press Esc to exit
+        break
 
-    cv2.waitKey(0)
-    cv2.destroyAllWindows()
+cap.release()
+out.release()  # Release the output video
+cv2.destroyAllWindows()
