@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 
 # Load the video
-cap = cv2.VideoCapture('D:/CapstoneImage/PythonApplication1/videoLab.mp4')
+cap = cv2.VideoCapture('Videos/speedVideo.mp4')
 
 if not cap.isOpened():
     print("Error: Unable to load the video.")
@@ -57,5 +57,5 @@ while True:
         break
 
 cap.release()
-out.release()  # Release the output video
+#out.release()  # Release the output video
 cv2.destroyAllWindows()
