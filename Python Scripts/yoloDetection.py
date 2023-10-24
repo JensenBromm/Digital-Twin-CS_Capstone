@@ -95,12 +95,13 @@ def main():
 
     videoPath1="Videos/stream1.mp4"
     videoPath2="Videos/speedVideo.mp4"
+    videoPath3="Videos/speedVideo2.mp4"
 
     #Can only connect to security camera while on GSU campus
     cameraIP="rtsp://141.165.40.33/stream1"
 
-    stillImage(imagePath2)
-    #video(videoPath2)  #This should be able to take in IP as well
+    #stillImage(imagePath2)
+    video(videoPath3)  #This should be able to take in IP as well
 
     
 
