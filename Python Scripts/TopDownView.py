@@ -19,6 +19,7 @@ def on_mouse(event, x, y, flags, param):
     if event == cv2.EVENT_LBUTTONDOWN:
         if len(points) < 4:
             points.append((x, y))
+            print("Point "+str(len(points))+": ("+str(x)+" , "+str(y)+")")
             cv2.circle(frame_with_dots, (x, y), 5, (0, 0, 255), -1)
             cv2.imshow('Video', frame_with_dots)
 
@@ -38,8 +39,8 @@ while len(points) < 4:
 new_points = np.array([[0, 0], [new_width, 0], [new_width, new_height], [0, new_height]], dtype=np.float32)
 
 # Define the codec and create a VideoWriter object
-fourcc = cv2.VideoWriter_fourcc(*'XVID')  # You can change the codec as needed
-out = cv2.VideoWriter('output_video.mp4', fourcc, 30.0, (new_width, new_height))  # Adjust frame rate as needed
+#fourcc = cv2.VideoWriter_fourcc(*'MP4V')  # You can change the codec as needed
+out = cv2.VideoWriter('filename.avi',  cv2.VideoWriter_fourcc(*'MJPG'), 10, (new_width,new_height))  # Adjust frame rate as needed
 
 while True:
     ret, frame = cap.read()

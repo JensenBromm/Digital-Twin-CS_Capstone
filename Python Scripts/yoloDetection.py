@@ -101,7 +101,7 @@ def main():
     cameraIP="rtsp://141.165.40.33/stream1"
 
     #stillImage(imagePath2)
-    video(videoPath3)  #This should be able to take in IP as well
+    video("test.avi")  #This should be able to take in IP as well
 
     
 
