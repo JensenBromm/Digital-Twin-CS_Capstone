@@ -6,7 +6,7 @@ import cv2
 
 #Define Global variables
 #Load the YOLO model
-modelPath="runs/detect/train/weights/best.pt"
+modelPath="runs/detect/train3/weights/best.pt"
 model=YOLO(modelPath)
 #Anything Below Threshold will not be marked
 threshold=0.6
@@ -96,12 +96,14 @@ def main():
     videoPath1="Videos/stream1.mp4"
     videoPath2="Videos/speedVideo.mp4"
     videoPath3="Videos/speedVideo2.mp4"
+    videoPath4="Videos/TopDown.avi"
 
     #Can only connect to security camera while on GSU campus
     cameraIP="rtsp://141.165.40.33/stream1"
 
     #stillImage(imagePath2)
-    video("test.avi")  #This should be able to take in IP as well
+    video(videoPath4)  #This should be able to take in IP as well
+    #video(cameraIP)
 
     
 

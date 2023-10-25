@@ -1,4 +1,4 @@
-path: A:/Code/Visual Studio Code Projects/Python/Digital-Twin-CS_Capstone/Python Scripts/Data #This will need to be changed to relative path later
+path: C:\Users\jense\OneDrive\Desktop\Coding Projects\Capstone\Digital-Twin-CS_Capstone\Python Scripts\Data #This will need to be changed to relative path later
 train: images/train
 val: images/train #Validation data set. Can be changed later if we get new pictures
 

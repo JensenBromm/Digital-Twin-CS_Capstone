@@ -13,9 +13,9 @@ new_width = 900
 new_height = 1000
 
 # Define the coordinates of the four points
-points = []
+points = [(766 , 630), (999 , 155), (422 , 10), (158 , 230)]
 
-def on_mouse(event, x, y, flags, param):
+""" def on_mouse(event, x, y, flags, param):
     if event == cv2.EVENT_LBUTTONDOWN:
         if len(points) < 4:
             points.append((x, y))
@@ -34,7 +34,7 @@ while len(points) < 4:
     cv2.imshow('Video', frame_with_dots)
     key = cv2.waitKey(0)  # Wait indefinitely until a key is pressed
     if key == 27:  # Press Esc to exit
-        break
+        break """
 
 new_points = np.array([[0, 0], [new_width, 0], [new_width, new_height], [0, new_height]], dtype=np.float32)
 
