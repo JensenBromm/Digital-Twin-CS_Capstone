@@ -4,6 +4,9 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include <mongocxx/client.hpp>
+
+#include "DatabaseConnection.h"
 #include "RobotMover.generated.h"
 
 UCLASS()
@@ -26,7 +29,6 @@ public:
 private:
 	UPROPERTY(EditAnywhere, Category="Robot_Mover")
 	FVector robotVelocity = FVector(10, 0, 0);
-
 	UPROPERTY(EditAnywhere)
 	FVector startLocation;
 
@@ -35,5 +37,12 @@ private:
 	UPROPERTY(EditAnywhere)
 	double moveDistance;
 
+	UPROPERTY(VisibleAnywhere)
+	FString name;
+	
+	UPROPERTY(EditAnywhere, Category = "DatabaseConnection")
+	TSubclassOf<ADatabaseConnection> DatabaseClass;
+
 	void MoveRobot(float DeltaTime);
+	double getRobotInfo(std::optional<bsoncxx::document::value> cursor);
 };
