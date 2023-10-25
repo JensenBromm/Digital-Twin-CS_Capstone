@@ -25,35 +25,34 @@ ADatabaseConnection::ADatabaseConnection()
 {
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
-
+	MongoInstance::GetInstance()->createPool(getenv("URI"));
+	auto dbClient = MongoInstance::GetInstance()->getClientFromPool();
+	robotDocument = dbClient->database("Capstone").collection("robots");
 }
 
 // Called when the game starts or when spawned
 void ADatabaseConnection::BeginPlay()
 {
 	Super::BeginPlay();
-	MongoInstance::GetInstance()->createPool(getenv("URI"));
 	SetActorTickInterval(0.2f);
-	
-	
 }
 
 // Called every frame
 void ADatabaseConnection::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-	getXCoord();
 	
+	createdDocument = true;
 }
 
-void ADatabaseConnection::getXCoord()
+std::optional<bsoncxx::document::value> ADatabaseConnection::getXCoord(std::string robotName)
 {
-	auto dbClient = MongoInstance::GetInstance()->getClientFromPool();
-	auto document = dbClient->database("Capstone").collection("robots");
-	auto cursor = document.find_one(make_document(kvp("_id", "Robot 1")));
-	auto x = cursor.value().view()["x"];
-	double xCoord = bsoncxx::types::b_double(x.get_double().value);
-	UE_LOG(LogTemp, Log, TEXT("X coord = %f"), xCoord);
+	return robotDocument.find_one(make_document(kvp("_id", robotName)));
+}
+
+bool ADatabaseConnection::getDocumentStatus()
+{
+	return createdDocument;
 }
 
 
