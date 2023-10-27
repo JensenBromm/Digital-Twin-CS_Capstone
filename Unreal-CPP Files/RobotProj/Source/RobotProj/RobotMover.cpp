@@ -3,13 +3,11 @@
 
 #include "RobotMover.h"
 
-#include "AsyncTreeDifferences.h"
 #include "Public/DatabaseConnection.h"
 THIRD_PARTY_INCLUDES_START
 #include <vector>
 #include <cstdlib>
 #include <memory>
-#include <mongocxx/pool.hpp>
 #include <mongocxx/database.hpp>
 #include <bsoncxx/builder/basic/array.hpp>
 #include <bsoncxx/builder/basic/document.hpp>

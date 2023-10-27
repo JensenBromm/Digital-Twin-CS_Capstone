@@ -5,9 +5,6 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "mongocxx/client.hpp"
-#include "mongocxx/instance.hpp"
-#include "MongoInstance.h"
-#include "Tools/UEdMode.h"
 #include "DatabaseConnection.generated.h"
 
 UCLASS()

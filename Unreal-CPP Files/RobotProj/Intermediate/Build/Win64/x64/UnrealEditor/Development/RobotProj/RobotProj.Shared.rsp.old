@@ -1,4 +1,5 @@
 /I "."
+/I "B:\Capstone\Digital-Twin-CS_Capstone\Unreal-CPP Files\RobotProj\Source\RobotProj\Private"
 /I "..\Intermediate\Build\Win64\UnrealEditor\Inc\Engine\UHT"
 /I "..\Shaders\Shared"
 /I "Runtime\Engine\Classes"
@@ -258,6 +259,7 @@
 /I "Developer\WidgetRegistration\Public"
 /I "B:\Capstone\Digital-Twin-CS_Capstone\Unreal-CPP Files\RobotProj\Intermediate\Build\Win64\UnrealEditor\Inc\RobotProj\UHT"
 /I "B:\Capstone\Digital-Twin-CS_Capstone\Unreal-CPP Files\RobotProj\Source"
+/I "B:\Capstone\Digital-Twin-CS_Capstone\Unreal-CPP Files\RobotProj\Source\RobotProj\Public"
 /I "B:\Capstone\Digital-Twin-CS_Capstone\Unreal-CPP Files\RobotProj\Plugins\MongoDB\Source\MongoDBSDK\Include"
 /external:W0
 /external:I "ThirdParty\mimalloc\include"
