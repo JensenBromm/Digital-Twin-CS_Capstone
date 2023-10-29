@@ -1,1 +1,9 @@
-Unreal-CPP*Files/*/Intermediate/*
+Unreal-CPP*Files/RobotProj/.vs/*
+Unreal-CPP*Files/RobotProj/.idea/*
+Unreal-CPP*Files/RobotProj/.git/*
+Unreal-CPP*Files/RobotProj/.sln/*
+Unreal-CPP*Files/RobotProj/Build/*
+Unreal-CPP*Files/RobotProj/DerivedDataCache/*
+Unreal-CPP*Files/RobotProj/Intermediate/*
+Unreal-CPP*Files/RobotProj/Plugins/*/Intermediate/*
+Unreal-CPP*Files/RobotProj/Saved/*

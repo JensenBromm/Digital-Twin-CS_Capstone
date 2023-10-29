@@ -1,9 +1,0 @@
- .vs/*
- .idea/*
- .git/*
- .sln/*
- Build/*
- DerivedDataCache/*
- Intermediate/*
- Plugins/*/Intermediate/*
- Saved/*
