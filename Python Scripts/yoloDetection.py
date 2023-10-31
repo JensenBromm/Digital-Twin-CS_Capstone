@@ -2,20 +2,32 @@
 import sys
 from ultralytics import YOLO
 import cv2
+from MongoInstance import getDatabase
+
+
+#Get the database
+dbname = getDatabase()
+
+#SetUp dictonary to communicate with the database
+collection_name = dbname["robots"]
+robotDict = {
+    "_id" :  1,
+    "class": "", # This is going to be either "AMR Robot" or "AMR Robot With Shelf"
+    "x" : 0,
+    "z" : 0
+}
 
 
 #Define Global variables
 #Load the YOLO model
 modelPath="runs/detect/train3/weights/best.pt"
 model=YOLO(modelPath)
+names=model.names
 #Anything Below Threshold will not be marked
 threshold=0.6
 
 #Coordinates of the new origin marker in top down view (Offset)
 newOrigin=[124,42]
-
-#Equation to Transalte pixel coordinates to unreal
-# Unreal Coordinate X= ScaleX * ImageCoordX - Offset 
 
 #Set the Scales between pixel and Unreal
 '''
@@ -28,7 +40,7 @@ Using the unreal coordinate and the pixel coordinate you can calculate a scale.
 I did this for each robot then found an average of the scales to get a final value for ScaleX and ScaleY
 '''
 scaleX=0.23
-scaleY=0.25
+scaleZ=0.25
 
 #object detection using a jpg image
 def stillImage(path):
@@ -42,23 +54,32 @@ def stillImage(path):
     # plot results
     frame_ = results.plot()
 
+    #Get needed info from detections
     cords=results.boxes.xyxy.tolist()
+    classIDs=results.boxes.cls.tolist()
+    trackIDs=results.boxes.id.tolist()
 
-    midPoints=[]
     for i in range(len(cords)):
-        print("----Unreal Coordinates----")
         #Seperate the coordinates
         x1=cords[i][0]
-        y1=cords[i][1]
+        z1=cords[i][1]
         x2=cords[i][2]
-        y2=cords[i][3]
+        z2=cords[i][3]
         
         #Calculate the midpoints of the bounding boxes and translate them to Unreal Coordinates
-        midX=scaleX*(((x1+x2)/2) - newOrigin[0])
-        midY=scaleY*(((y1+y2)/2) - newOrigin[1])
-        print(str(midX)+","+str(midY))
-        midPoints.append([midX,midY])
-        print("----------------------")
+        unrealX=scaleX*(((x1+x2)/2) - newOrigin[0])
+        unrealZ=scaleZ*(((z1+z2)/2) - newOrigin[1])
+
+        #Get the variables for the database
+        name=names[classIDs[i]]
+        #Detector will label the robots 1,2,3, or 4
+        id=trackIDs[i]
+        
+        #Robots are identified based off their unique label
+        keyValue = {"_id" : id}
+        #Update the x and z coordinate. Also, make sure that the class name hasnt changed
+        update= {"$set": {"x":unrealX, "z":unrealZ, "class":name}} #If the class name changes from robot -> robot with shelf the unreal engine needs to create a new object at that location
+        collection_name.update_one(keyValue, update, upsert=True)
 
   
     cv2.imshow('frame', frame_)
@@ -94,23 +115,32 @@ def video(path):
             # plot results
             frame_ = results.plot()
 
+            #Get needed info from detections
             cords=results.boxes.xyxy.tolist()
+            classIDs=results.boxes.cls.tolist()
+            trackIDs=results.boxes.id.tolist()
 
-            midPoints=[]
             for i in range(len(cords)):
-                print("----Unreal Coordinates----")
-                #Seperate the coordinates
+             #Seperate the coordinates
                 x1=cords[i][0]
-                y1=cords[i][1]
+                z1=cords[i][1]
                 x2=cords[i][2]
-                y2=cords[i][3]
+                z2=cords[i][3]
         
                 #Calculate the midpoints of the bounding boxes and translate them to Unreal Coordinates
-                midX=scaleX*(((x1+x2)/2) - newOrigin[0])
-                midY=scaleY*(((y1+y2)/2) - newOrigin[1])
-                print(str(midX)+","+str(midY))
-                midPoints.append([midX,midY])
-                print("----------------------")
+                unrealX=scaleX*(((x1+x2)/2) - newOrigin[0])
+                unrealZ=scaleZ*(((z1+z2)/2) - newOrigin[1])
+
+                #Get the variables for the database
+                name=names[classIDs[i]]
+                #Detector will label the robots 1,2,3, or 4
+                id=trackIDs[i]
+        
+                #Robots are identified based off their unique label
+                keyValue = {"_id" : id}
+                #Update the x and z coordinate. Also, make sure that the class name hasnt changed
+                update= {"$set": {"x":unrealX, "z":unrealZ, "class":name}} #If the class name changes from robot -> robot with shelf the unreal engine needs to create a new object at that location
+                collection_name.update_one(keyValue, update, upsert=True)
 
             # visualize
             cv2.imshow('frame', frame_)
