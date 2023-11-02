@@ -35,7 +35,12 @@ void ARobotMover::BeginPlay()
 	Super::BeginPlay();
 
 	startLocation = GetActorLocation();
-	name = GetActorLabel();
+	std::string name = std::string(TCHAR_TO_UTF8(*GetActorLabel()));
+	int length = name.size();
+	_id = name.substr(length - 1);
+	//UE_LOG(LogTemp, Log, TEXT("%hs"), _id.c_str());
+	className = name.substr(0, length - 2);
+	//UE_LOG(LogTemp, Log, TEXT("%hs"), className.c_str());
 }
 
 // Called every frame
@@ -46,9 +51,8 @@ void ARobotMover::Tick(float DeltaTime)
 	MoveRobot(DeltaTime);
 	if (DatabaseClass)
 	{
-		std::string robotName = std::string(TCHAR_TO_UTF8(*name));
 		//TODO Pass in collection instead of cursor
-		double x = getRobotInfo(DatabaseClass->GetDefaultObject<ADatabaseConnection>()->getXCoord(robotName));
+		getRobotInfo(DatabaseClass->GetDefaultObject<ADatabaseConnection>()->getRobotDocument(_id));
 	}
 	
 }
@@ -60,26 +64,18 @@ void ARobotMover::MoveRobot(float DeltaTime)
 	* - Add vector to that location
 	* - Set the location */
 	FVector currentLocat = GetActorLocation();
-	currentLocat += robotVelocity * DeltaTime;
 	SetActorLocation(currentLocat);
 
-	distance = FVector::Dist(currentLocat, startLocation);
-	if (distance > moveDistance)
-	{
-		float overshoot = distance - moveDistance;
-		//UE_LOG(LogTemp, Warning, TEXT("%s Overshoot distance: %fcm"), *name, overshoot);
-
-		FVector moveDirection = robotVelocity.GetSafeNormal();
-		startLocation += moveDirection * moveDistance;
-		SetActorLocation(startLocation);
-		robotVelocity *= -1;
-	}
+	startLocation.X = x;
+	startLocation.Y = z;
+	SetActorLocation(startLocation);
 }
 
-double ARobotMover::getRobotInfo(std::optional<bsoncxx::document::value> cursor)
+void ARobotMover::getRobotInfo(std::optional<bsoncxx::document::value> cursor)
 {
-	auto x = cursor.value().view()["x"];
-	double xCoord = bsoncxx::types::b_double(x.get_double().value);
-	UE_LOG(LogTemp, Log, TEXT("%s X coord = %f"), *FString(name), xCoord);
-	return xCoord;
+	auto xCoord = cursor.value().view()["x"];
+	auto zCoord = cursor.value().view()["z"];
+	x = bsoncxx::types::b_double(xCoord.get_double().value);
+	z = bsoncxx::types::b_double(zCoord.get_double().value);
+	//UE_LOG(LogTemp, Log, TEXT("%s X coord = %f"), *FString(name), x);
 }

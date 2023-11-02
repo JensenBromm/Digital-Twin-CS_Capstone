@@ -48,9 +48,13 @@ void EmptyLinkFunctionForGeneratedCodeRobotMover() {}
 #endif
 		static const UECodeGen_Private::FDoublePropertyParams NewProp_moveDistance;
 #if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_name_MetaData[];
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_x_MetaData[];
 #endif
-		static const UECodeGen_Private::FStrPropertyParams NewProp_name;
+		static const UECodeGen_Private::FDoublePropertyParams NewProp_x;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_z_MetaData[];
+#endif
+		static const UECodeGen_Private::FDoublePropertyParams NewProp_z;
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_DatabaseClass_MetaData[];
 #endif
@@ -99,12 +103,19 @@ void EmptyLinkFunctionForGeneratedCodeRobotMover() {}
 #endif
 	const UECodeGen_Private::FDoublePropertyParams Z_Construct_UClass_ARobotMover_Statics::NewProp_moveDistance = { "moveDistance", nullptr, (EPropertyFlags)0x0040000000000001, UECodeGen_Private::EPropertyGenFlags::Double, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ARobotMover, moveDistance), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ARobotMover_Statics::NewProp_moveDistance_MetaData), Z_Construct_UClass_ARobotMover_Statics::NewProp_moveDistance_MetaData) };
 #if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ARobotMover_Statics::NewProp_name_MetaData[] = {
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ARobotMover_Statics::NewProp_x_MetaData[] = {
 		{ "Category", "RobotMover" },
 		{ "ModuleRelativePath", "RobotMover.h" },
 	};
 #endif
-	const UECodeGen_Private::FStrPropertyParams Z_Construct_UClass_ARobotMover_Statics::NewProp_name = { "name", nullptr, (EPropertyFlags)0x0040000000020001, UECodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ARobotMover, name), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ARobotMover_Statics::NewProp_name_MetaData), Z_Construct_UClass_ARobotMover_Statics::NewProp_name_MetaData) };
+	const UECodeGen_Private::FDoublePropertyParams Z_Construct_UClass_ARobotMover_Statics::NewProp_x = { "x", nullptr, (EPropertyFlags)0x0040000000020001, UECodeGen_Private::EPropertyGenFlags::Double, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ARobotMover, x), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ARobotMover_Statics::NewProp_x_MetaData), Z_Construct_UClass_ARobotMover_Statics::NewProp_x_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ARobotMover_Statics::NewProp_z_MetaData[] = {
+		{ "Category", "RobotMover" },
+		{ "ModuleRelativePath", "RobotMover.h" },
+	};
+#endif
+	const UECodeGen_Private::FDoublePropertyParams Z_Construct_UClass_ARobotMover_Statics::NewProp_z = { "z", nullptr, (EPropertyFlags)0x0040000000020001, UECodeGen_Private::EPropertyGenFlags::Double, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ARobotMover, z), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ARobotMover_Statics::NewProp_z_MetaData), Z_Construct_UClass_ARobotMover_Statics::NewProp_z_MetaData) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ARobotMover_Statics::NewProp_DatabaseClass_MetaData[] = {
 		{ "Category", "DatabaseConnection" },
@@ -117,7 +128,8 @@ void EmptyLinkFunctionForGeneratedCodeRobotMover() {}
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ARobotMover_Statics::NewProp_startLocation,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ARobotMover_Statics::NewProp_distance,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ARobotMover_Statics::NewProp_moveDistance,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ARobotMover_Statics::NewProp_name,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ARobotMover_Statics::NewProp_x,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ARobotMover_Statics::NewProp_z,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ARobotMover_Statics::NewProp_DatabaseClass,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ARobotMover_Statics::StaticCppClassTypeInfo = {
@@ -158,9 +170,9 @@ void EmptyLinkFunctionForGeneratedCodeRobotMover() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Capstone_Digital_Twin_CS_Capstone_Unreal_CPP_Files_RobotProj_Source_RobotProj_RobotMover_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_ARobotMover, ARobotMover::StaticClass, TEXT("ARobotMover"), &Z_Registration_Info_UClass_ARobotMover, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ARobotMover), 2838398277U) },
+		{ Z_Construct_UClass_ARobotMover, ARobotMover::StaticClass, TEXT("ARobotMover"), &Z_Registration_Info_UClass_ARobotMover, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ARobotMover), 2264097746U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Capstone_Digital_Twin_CS_Capstone_Unreal_CPP_Files_RobotProj_Source_RobotProj_RobotMover_h_1728996966(TEXT("/Script/RobotProj"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Capstone_Digital_Twin_CS_Capstone_Unreal_CPP_Files_RobotProj_Source_RobotProj_RobotMover_h_5976307(TEXT("/Script/RobotProj"),
 		Z_CompiledInDeferFile_FID_Capstone_Digital_Twin_CS_Capstone_Unreal_CPP_Files_RobotProj_Source_RobotProj_RobotMover_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Capstone_Digital_Twin_CS_Capstone_Unreal_CPP_Files_RobotProj_Source_RobotProj_RobotMover_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

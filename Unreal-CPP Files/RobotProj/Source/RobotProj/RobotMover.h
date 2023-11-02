@@ -37,12 +37,17 @@ private:
 	UPROPERTY(EditAnywhere)
 	double moveDistance;
 
+	std::string className;
+	std::string _id;
+
 	UPROPERTY(VisibleAnywhere)
-	FString name;
+	double x;
+	UPROPERTY(VisibleAnywhere)
+	double z;
 	
 	UPROPERTY(EditAnywhere, Category = "DatabaseConnection")
 	TSubclassOf<ADatabaseConnection> DatabaseClass;
 
 	void MoveRobot(float DeltaTime);
-	double getRobotInfo(std::optional<bsoncxx::document::value> cursor);
+	void getRobotInfo(std::optional<bsoncxx::document::value> cursor);
 };

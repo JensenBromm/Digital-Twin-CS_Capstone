@@ -45,9 +45,9 @@ void ADatabaseConnection::Tick(float DeltaTime)
 	createdDocument = true;
 }
 
-std::optional<bsoncxx::document::value> ADatabaseConnection::getXCoord(std::string robotName)
+std::optional<bsoncxx::document::value> ADatabaseConnection::getRobotDocument(std::string robotClass)
 {
-	return robotDocument.find_one(make_document(kvp("_id", robotName)));
+	return robotDocument.find_one(make_document(kvp("_id", std::stoi(robotClass))));
 }
 
 bool ADatabaseConnection::getDocumentStatus()

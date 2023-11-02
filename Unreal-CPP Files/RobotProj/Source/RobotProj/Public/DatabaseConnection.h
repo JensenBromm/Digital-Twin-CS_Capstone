@@ -26,7 +26,7 @@ protected:
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
-	std::optional<bsoncxx::document::value> getXCoord(std::string robotName);
+	std::optional<bsoncxx::document::value> getRobotDocument(std::string robotClass);
 	mongocxx::collection getCollection();
 	bool getDocumentStatus();
 	mongocxx::collection robotDocument;
