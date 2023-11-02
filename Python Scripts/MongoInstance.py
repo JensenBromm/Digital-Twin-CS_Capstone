@@ -2,7 +2,7 @@ import pymongo
 
 
 def getDatabase():
-    CONNECTION_STRING = "mongodb+srv://BCSBruh:Dogman26@blog.yzwaere.mongodb.net/"
+    CONNECTION_STRING = "" #Use env variable to get URI string
 
     client = pymongo.MongoClient(CONNECTION_STRING)
     return client['Capstone']
