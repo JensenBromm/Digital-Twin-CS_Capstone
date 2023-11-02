@@ -2,7 +2,7 @@ import pymongo
 
 
 def getDatabase():
-    CONNECTION_STRING = URI;
+    CONNECTION_STRING = URI
 
     client = pymongo.MongoClient(CONNECTION_STRING)
     return client['Capstone']
