@@ -3,11 +3,7 @@ import os
 
 
 def getDatabase():
-<<<<<<< Updated upstream
-    CONNECTION_STRING = "" #Use env variable to get URI string
-=======
-    CONNECTION_STRING = os.getenv('URI')
->>>>>>> Stashed changes
+    CONNECTION_STRING = "mongodb+srv://Capstone:cExlM50d9QzkQFPY@capstone.h9p4nqr.mongodb.net/" #Use env variable to get URI string
 
     client = pymongo.MongoClient(CONNECTION_STRING)
     return client['Capstone']

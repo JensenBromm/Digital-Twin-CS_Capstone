@@ -3,6 +3,7 @@ import sys
 from ultralytics import YOLO
 import cv2
 from MongoInstance import getDatabase
+from TopDownView import createTopDown
 
 
 #Get the database
@@ -14,7 +15,7 @@ robotDict = {
     "_id" :  1,
     "class": "", # This is going to be either "AMR Robot" or "AMR Robot With Shelf"
     "x" : 0,
-    "z" : 0
+    "y" : 0
 }
 
 
@@ -26,7 +27,7 @@ names=model.names
 #Anything Below Threshold will not be marked
 threshold=0.6
 
-#Coordinates of the new origin marker in top down view (Offset)
+#Coordinates of the new origin marker in top down view (Offset) We are using the red marker in the top left of the top down view as the new origin
 newOrigin=[124,42]
 
 #Set the Scales between pixel and Unreal
@@ -40,14 +41,13 @@ Using the unreal coordinate and the pixel coordinate you can calculate a scale.
 I did this for each robot then found an average of the scales to get a final value for ScaleX and ScaleY
 '''
 scaleX=0.23
-scaleZ=0.25
+scaleY=0.25
 
 #object detection using a jpg image
 def stillImage(path):
 
     frame=cv2.imread(path)
 
-    # detect objects
     # track objects
     results = model.track(frame, persist=True)[0]
 
@@ -62,13 +62,13 @@ def stillImage(path):
     for i in range(len(cords)):
         #Seperate the coordinates
         x1=cords[i][0]
-        z1=cords[i][1]
+        y1=cords[i][1]
         x2=cords[i][2]
-        z2=cords[i][3]
+        y2=cords[i][3]
         
         #Calculate the midpoints of the bounding boxes and translate them to Unreal Coordinates
         unrealX=scaleX*(((x1+x2)/2) - newOrigin[0])
-        unrealZ=scaleZ*(((z1+z2)/2) - newOrigin[1])
+        unrealY=scaleY*(((y1+y2)/2) - newOrigin[1])
 
         #Get the variables for the database
         name=names[classIDs[i]]
@@ -78,7 +78,7 @@ def stillImage(path):
         #Robots are identified based off their unique label
         keyValue = {"_id" : id}
         #Update the x and z coordinate. Also, make sure that the class name hasnt changed
-        update= {"$set": {"x":unrealX, "z":unrealZ, "class":name}} #If the class name changes from robot -> robot with shelf the unreal engine needs to create a new object at that location
+        update= {"$set": {"x":unrealX, "y":unrealY, "class":name}} #If the class name changes from robot -> robot with shelf the unreal engine needs to create a new object at that location
         collection_name.update_one(keyValue, update, upsert=True)
 
   
@@ -88,7 +88,7 @@ def stillImage(path):
         if(cv2.waitKey(30)==27):
             break
     
-#Object Detection via Pre-Recorded Video
+#Object Detection via Pre-Recorded Video or Live Camera Stream (RTSP STREAM)
 def video(path):
     if(len(path)==0):
         sys.exit("Path Can Not be blank")
@@ -108,7 +108,11 @@ def video(path):
     while ret:
         ret, frame = camera.read()
         if ret:
-            # detect objects
+            #Check if the video is from a live camera feed
+            if 'rtsp' in path:
+                #If a live camera feed is being used, a top down view needs to be constructed
+                frame=createTopDown(frame)
+
             # track objects
             results = model.track(frame, persist=True)[0]
 
@@ -123,13 +127,13 @@ def video(path):
             for i in range(len(cords)):
              #Seperate the coordinates
                 x1=cords[i][0]
-                z1=cords[i][1]
+                y1=cords[i][1]
                 x2=cords[i][2]
-                z2=cords[i][3]
+                y2=cords[i][3]
         
                 #Calculate the midpoints of the bounding boxes and translate them to Unreal Coordinates
                 unrealX=scaleX*(((x1+x2)/2) - newOrigin[0])
-                unrealZ=scaleZ*(((z1+z2)/2) - newOrigin[1])
+                unrealY=scaleY*(((y1+y2)/2) - newOrigin[1])
 
                 #Get the variables for the database
                 name=names[classIDs[i]]
@@ -139,7 +143,7 @@ def video(path):
                 #Robots are identified based off their unique label
                 keyValue = {"_id" : id}
                 #Update the x and z coordinate. Also, make sure that the class name hasnt changed
-                update= {"$set": {"x":unrealX, "z":unrealZ, "class":name}} #If the class name changes from robot -> robot with shelf the unreal engine needs to create a new object at that location
+                update= {"$set": {"x":unrealX, "y":unrealY, "class":name}} #If the class name changes from robot -> robot with shelf the unreal engine needs to create a new object at that location
                 collection_name.update_one(keyValue, update, upsert=True)
 
             # visualize
@@ -147,27 +151,26 @@ def video(path):
             #Escape key will close the window
             if(cv2.waitKey(30)==27):
                 break
-        else: #Once Frame is done
+        else: #Once Video is done
             camera.release()
             cv2.destroyAllWindows()
 
 def main():
     
-    imagePath1="Data/images/train/20230915_122551.jpg" #Upclose Robot
-    imagePath2="Data/images/train/Stream1 - frame at 0m1s.jpg" #Starting Lineup Stream1
-    imagePath3="Data/images/train/Stream1 - frame at 8m0s.jpg" #Robots with Shelves
-    imagePath4="Data/images/train/TopDown - frame at 0m0s.jpg" 
-    imagePath5="Data/images/train/TopDown - frame at 1m7s.jpg" 
-    videoPath1="Videos/stream1.mp4"
-    videoPath2="Videos/speedVideo.mp4"
-    videoPath3="Videos/speedVideo2.mp4"
-    videoPath4="Videos/TopDown.avi"
+   
+    imagePath1="Data/images/train/TopDown - frame at 0m0s.jpg" 
+    imagePath2="Data/images/train/TopDown - frame at 1m7s.jpg" 
+    
+    videoPath="Videos/TopDown.avi"
 
     #Can only connect to security camera while on GSU campus
     cameraIP="rtsp://141.165.40.33/stream1"
 
-    #stillImage(imagePath4)
-    video(videoPath4)  #This should be able to take in IP as well
+    #Object detection based on a still image
+    #stillImage(imagePath1)
+
+    #Object detection based on a video or camera stream
+    video(videoPath)
     #video(cameraIP)
 
     
