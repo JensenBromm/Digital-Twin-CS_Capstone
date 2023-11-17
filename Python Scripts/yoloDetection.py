@@ -52,34 +52,37 @@ def stillImage(path):
     results = model.track(frame, persist=True)[0]
 
     # plot results
-    frame_ = results.plot()
+    frame_ = results.plot()            
+    
+    if len(results) > 0:
+        #Get needed info from detections
+        cords=results.boxes.xyxy.tolist()
+        classIDs=results.boxes.cls.tolist()
+        trackIDs=results.boxes.id.tolist()
 
-    #Get needed info from detections
-    cords=results.boxes.xyxy.tolist()
-    classIDs=results.boxes.cls.tolist()
-    trackIDs=results.boxes.id.tolist()
-
-    for i in range(len(cords)):
-        #Seperate the coordinates
-        x1=cords[i][0]
-        y1=cords[i][1]
-        x2=cords[i][2]
-        y2=cords[i][3]
+        for i in range(len(cords)):
+            #Seperate the coordinates
+            x1=cords[i][0]
+            y1=cords[i][1]
+            x2=cords[i][2]
+            y2=cords[i][3]
         
-        #Calculate the midpoints of the bounding boxes and translate them to Unreal Coordinates
-        unrealX=scaleX*(((x1+x2)/2) - newOrigin[0])
-        unrealY=scaleY*(((y1+y2)/2) - newOrigin[1])
+            #Calculate the midpoints of the bounding boxes and translate them to Unreal Coordinates
+            unrealX=scaleX*(((x1+x2)/2) - newOrigin[0])
+            unrealY=scaleY*(((y1+y2)/2) - newOrigin[1])
 
-        #Get the variables for the database
-        name=names[classIDs[i]]
-        #Detector will label the robots 1,2,3, or 4
-        id=trackIDs[i]
+            #Get the variables for the database
+            name=names[classIDs[i]]
+            #Detector will label the robots 1,2,3, or 4
+            id=trackIDs[i]
         
-        #Robots are identified based off their unique label
-        keyValue = {"_id" : id}
-        #Update the x and z coordinate. Also, make sure that the class name hasnt changed
-        update= {"$set": {"x":unrealX, "y":unrealY, "class":name}} #If the class name changes from robot -> robot with shelf the unreal engine needs to create a new object at that location
-        collection_name.update_one(keyValue, update, upsert=True)
+            #Robots are identified based off their unique label
+            keyValue = {"_id" : id}
+            #Update the x and z coordinate. Also, make sure that the class name hasnt changed
+            update= {"$set": {"x":unrealX, "y":unrealY, "class":name}} #If the class name changes from robot -> robot with shelf the unreal engine needs to create a new object at that location
+            collection_name.update_one(keyValue, update, upsert=True)
+    else:
+        print("No objects detected")
 
   
     cv2.imshow('frame', frame_)
@@ -119,33 +122,35 @@ def video(path):
             # plot results
             frame_ = results.plot()
 
-            #Get needed info from detections
-            cords=results.boxes.xyxy.tolist()
-            classIDs=results.boxes.cls.tolist()
-            trackIDs=results.boxes.id.tolist()
+            if len(results) > 0:
+                #Get needed info from detections
+                cords=results.boxes.xyxy.tolist()
+                classIDs=results.boxes.cls.tolist()
+                trackIDs=results.boxes.id.tolist()
 
-            for i in range(len(cords)):
-             #Seperate the coordinates
-                x1=cords[i][0]
-                y1=cords[i][1]
-                x2=cords[i][2]
-                y2=cords[i][3]
+                for i in range(len(cords)):
+                #Seperate the coordinates
+                    x1=cords[i][0]
+                    y1=cords[i][1]
+                    x2=cords[i][2]
+                    y2=cords[i][3]
         
-                #Calculate the midpoints of the bounding boxes and translate them to Unreal Coordinates
-                unrealX=scaleX*(((x1+x2)/2) - newOrigin[0])
-                unrealY=scaleY*(((y1+y2)/2) - newOrigin[1])
+                    #Calculate the midpoints of the bounding boxes and translate them to Unreal Coordinates
+                    unrealX=scaleX*(((x1+x2)/2) - newOrigin[0])
+                    unrealY=scaleY*(((y1+y2)/2) - newOrigin[1])
 
-                #Get the variables for the database
-                name=names[classIDs[i]]
-                #Detector will label the robots 1,2,3, or 4
-                id=trackIDs[i]
+                    #Get the variables for the database
+                    name=names[classIDs[i]]
+                    #Detector will label the robots 1,2,3, or 4
+                    id=trackIDs[i]
         
-                #Robots are identified based off their unique label
-                keyValue = {"_id" : id}
-                #Update the x and z coordinate. Also, make sure that the class name hasnt changed
-                update= {"$set": {"x":unrealX, "y":unrealY, "class":name}} #If the class name changes from robot -> robot with shelf the unreal engine needs to create a new object at that location
-                collection_name.update_one(keyValue, update, upsert=True)
-
+                    #Robots are identified based off their unique label
+                    keyValue = {"_id" : id}
+                    #Update the x and z coordinate. Also, make sure that the class name hasnt changed
+                    update= {"$set": {"x":unrealX, "y":unrealY, "class":name}} #If the class name changes from robot -> robot with shelf the unreal engine needs to create a new object at that location
+                    collection_name.update_one(keyValue, update, upsert=True)
+            else:
+                print("No objects detected")
             # visualize
             cv2.imshow('frame', frame_)
             #Escape key will close the window
