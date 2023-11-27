@@ -87,9 +87,13 @@ def stillImage(path):
   
     cv2.imshow('frame', frame_)
     #Escape key will close the window
+    """ 
     while True:
         if(cv2.waitKey(30)==27):
-            break
+            break 
+    """
+
+    return results
     
 #Object Detection via Pre-Recorded Video or Live Camera Stream (RTSP STREAM)
 def video(path):
@@ -159,6 +163,8 @@ def video(path):
         else: #Once Video is done
             camera.release()
             cv2.destroyAllWindows()
+
+    return results
 
 def main():
     
