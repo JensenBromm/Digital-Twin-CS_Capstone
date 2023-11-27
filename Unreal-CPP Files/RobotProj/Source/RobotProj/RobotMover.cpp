@@ -59,10 +59,6 @@ void ARobotMover::Tick(float DeltaTime)
 
 void ARobotMover::MoveRobot(float DeltaTime)
 {
-	/* Move platform forward
-	* - Get current location
-	* - Add vector to that location
-	* - Set the location */
 	FVector currentLocat = GetActorLocation();
 	SetActorLocation(currentLocat);
 
