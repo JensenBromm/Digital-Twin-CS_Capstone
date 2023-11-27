@@ -75,7 +75,10 @@ void ARobotMover::getRobotInfo(std::optional<bsoncxx::document::value> cursor)
 {
 	auto xCoord = cursor.value().view()["x"];
 	auto zCoord = cursor.value().view()["z"];
+	auto name = cursor.value().view()["class"];
+	tempClassName = bsoncxx::types::b_string(name.get_string().value);
 	x = bsoncxx::types::b_double(xCoord.get_double().value);
 	z = bsoncxx::types::b_double(zCoord.get_double().value);
-	//UE_LOG(LogTemp, Log, TEXT("%s X coord = %f"), *FString(name), x);
+	dbClassName = UTF8_TO_TCHAR(tempClassName.c_str());
+	//UE_LOG(LogTemp, Log, TEXT("%hs"), dbClassName.c_str());
 }

@@ -17,6 +17,8 @@ class ROBOTPROJ_API ARobotMover : public AActor
 public:	
 	// Sets default values for this actor's properties
 	ARobotMover();
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	FString dbClassName;
 
 protected:
 	// Called when the game starts or when spawned
@@ -38,6 +40,7 @@ private:
 	double moveDistance;
 
 	std::string className;
+	std::string tempClassName;
 	std::string _id;
 
 	UPROPERTY(VisibleAnywhere)
