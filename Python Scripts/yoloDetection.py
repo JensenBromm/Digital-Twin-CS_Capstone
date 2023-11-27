@@ -79,7 +79,8 @@ def stillImage(path):
             #Robots are identified based off their unique label
             keyValue = {"_id" : id}
             #Update the x and z coordinate. Also, make sure that the class name hasnt changed
-            update= {"$set": {"x":unrealX, "y":unrealY, "class":name}} #If the class name changes from robot -> robot with shelf the unreal engine needs to create a new object at that location
+            #The database is marked incorrectly the Y axis is marked as the Z axis
+            update= {"$set": {"x":unrealX, "z":unrealY, "class":name}} #If the class name changes from robot -> robot with shelf the unreal engine needs to create a new object at that location
             collection_name.update_one(keyValue, update, upsert=True)
     else:
         print("No objects detected")
@@ -151,7 +152,8 @@ def video(path):
                     #Robots are identified based off their unique label
                     keyValue = {"_id" : id}
                     #Update the x and z coordinate. Also, make sure that the class name hasnt changed
-                    update= {"$set": {"x":unrealX, "y":unrealY, "class":name}} #If the class name changes from robot -> robot with shelf the unreal engine needs to create a new object at that location
+                    #The database is marked incorrectly the Y axis is marked as the Z axis
+                    update= {"$set": {"x":unrealX, "z":unrealY, "class":name}} #If the class name changes from robot -> robot with shelf the unreal engine needs to create a new object at that location
                     collection_name.update_one(keyValue, update, upsert=True)
             else:
                 print("No objects detected")
